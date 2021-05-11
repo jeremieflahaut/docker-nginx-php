@@ -29,7 +29,7 @@ echo "Install php..."
 apt-get install -y build-essential lsb-release ca-certificates apt-transport-https software-properties-common memcached libmemcached-tools zlib1g-dev
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/sury-php.list
 wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
-apt-get update && apt-get install -y openssl php7.4 php7.4-common php7.4-fpm php-pear php7.4-dev php7.4-memcached php7.4-curl php7.4-bcmath php7.4-ctype php7.4-fileinfo php7.4-mbstring php7.4-mysql php7.4-sqlite3 php7.4-xml php7.4-zip php7.4-tokenizer php7.4-gd php7.4-imagick \
+apt-get update && apt-get install -y openssl php7.4 php7.4-common php7.4-fpm php7.4-pear php7.4-dev php7.4-memcached php7.4-curl php7.4-bcmath php7.4-ctype php7.4-fileinfo php7.4-mbstring php7.4-mysql php7.4-sqlite3 php7.4-xml php7.4-zip php7.4-tokenizer php7.4-gd php7.4-imagick \
 && pecl channel-update pecl.php.net \
 && pecl install memcached redis mongodb xdebug \
 && touch /etc/php/7.4/mods-available/memcached.ini && echo extension=memcached.so > /etc/php/7.4/mods-available/memcached.ini \
