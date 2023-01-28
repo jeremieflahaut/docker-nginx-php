@@ -29,21 +29,21 @@ echo "Install php..."
 apt-get install -y build-essential lsb-release ca-certificates apt-transport-https software-properties-common memcached libmemcached-tools zlib1g-dev
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/sury-php.list
 wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
-apt-get update && apt-get install -y openssl php8.0 php8.0-common php8.0-fpm php-pear php8.0-dev php8.0-memcached php8.0-curl php8.0-bcmath php8.0-ctype php8.0-fileinfo php8.0-mbstring php8.0-mysql php8.0-sqlite3 php8.0-xml php8.0-zip php8.0-tokenizer php8.0-gd php8.0-imagick \
+apt-get update && apt-get install -y openssl php8.2 php8.2-common php8.2-fpm php-pear php8.2-dev php8.2-memcached php8.2-curl php8.2-bcmath php8.2-ctype php8.2-fileinfo php8.2-mbstring php8.2-mysql php8.2-sqlite3 php8.2-xml php8.2-zip php8.2-tokenizer php8.2-gd php8.2-imagick \
 && pecl channel-update pecl.php.net \
 && pecl install memcached redis mongodb xdebug \
-&& touch /etc/php/8.0/mods-available/memcached.ini && echo extension=memcached.so > /etc/php/8.0/mods-available/memcached.ini \
-&& ln -s /etc/php/8.0/mods-available/memcached.ini /etc/php/8.0/fpm/conf.d/memcached.ini \
-&& ln -s /etc/php/8.0/mods-available/memcached.ini /etc/php/8.0/cli/conf.d/memcached.ini \
-&& touch /etc/php/8.0/mods-available/redis.ini && echo extension=redis.so > /etc/php/8.0/mods-available/redis.ini \
-&& ln -s /etc/php/8.0/mods-available/redis.ini /etc/php/8.0/fpm/conf.d/redis.ini \
-&& ln -s /etc/php/8.0/mods-available/redis.ini /etc/php/8.0/cli/conf.d/redis.ini \
-&& touch /etc/php/8.0/mods-available/mongodb.ini && echo extension=mongodb.so > /etc/php/8.0/mods-available/mongodb.ini \
-&& ln -s /etc/php/8.0/mods-available/mongodb.ini /etc/php/8.0/fpm/conf.d/mongodb.ini \
-&& ln -s /etc/php/8.0/mods-available/mongodb.ini /etc/php/8.0/cli/conf.d/mongodb.ini \
-&& touch /etc/php/8.0/mods-available/xdebug.ini && echo zend_extension=xdebug.so > /etc/php/8.0/mods-available/xdebug.ini \
-&& ln -s /etc/php/8.0/mods-available/xdebug.ini /etc/php/8.0/fpm/conf.d/xdebug.ini \
-&& ln -s /etc/php/8.0/mods-available/xdebug.ini /etc/php/8.0/cli/conf.d/xdebug.ini
+&& touch /etc/php/8.2/mods-available/memcached.ini && echo extension=memcached.so > /etc/php/8.2/mods-available/memcached.ini \
+&& ln -s /etc/php/8.2/mods-available/memcached.ini /etc/php/8.2/fpm/conf.d/memcached.ini \
+&& ln -s /etc/php/8.2/mods-available/memcached.ini /etc/php/8.2/cli/conf.d/memcached.ini \
+&& touch /etc/php/8.2/mods-available/redis.ini && echo extension=redis.so > /etc/php/8.2/mods-available/redis.ini \
+&& ln -s /etc/php/8.2/mods-available/redis.ini /etc/php/8.2/fpm/conf.d/redis.ini \
+&& ln -s /etc/php/8.2/mods-available/redis.ini /etc/php/8.2/cli/conf.d/redis.ini \
+&& touch /etc/php/8.2/mods-available/mongodb.ini && echo extension=mongodb.so > /etc/php/8.2/mods-available/mongodb.ini \
+&& ln -s /etc/php/8.2/mods-available/mongodb.ini /etc/php/8.2/fpm/conf.d/mongodb.ini \
+&& ln -s /etc/php/8.2/mods-available/mongodb.ini /etc/php/8.2/cli/conf.d/mongodb.ini \
+&& touch /etc/php/8.2/mods-available/xdebug.ini && echo zend_extension=xdebug.so > /etc/php/8.2/mods-available/xdebug.ini \
+&& ln -s /etc/php/8.2/mods-available/xdebug.ini /etc/php/8.2/fpm/conf.d/xdebug.ini \
+&& ln -s /etc/php/8.2/mods-available/xdebug.ini /etc/php/8.2/cli/conf.d/xdebug.ini
 
 #Install composer
 echo "Install composer..."

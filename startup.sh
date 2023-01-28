@@ -27,9 +27,9 @@ cron
 
 #Start PHP-FPM
 echo "Start PHP-FPM..."
-sed -i "s/www-data/debian/g" /etc/php/8.0/fpm/pool.d/www.conf
-sed -i "s/;clear_env/clear_env/g" /etc/php/8.0/fpm/pool.d/www.conf
-service php8.0-fpm start
+sed -i "s/www-data/debian/g" /etc/php/8.2/fpm/pool.d/www.conf
+sed -i "s/;clear_env/clear_env/g" /etc/php/8.2/fpm/pool.d/www.conf
+service php8.2-fpm start
 
 #Start nginx
 echo "start nginx ..."
