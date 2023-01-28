@@ -1,5 +1,7 @@
 # nginx-php
 
+![example workflow](https://github.com/jeremieflahaut/docker-nginx-php/actions/workflows/master.yml/badge.svg)
+
 Docker image with nginx & php-fpm ready for Laravel project
 
 ### Github
