@@ -5,6 +5,9 @@ echo "Run startup.sh ..."
 echo "Host UID (startup): $USER_ID"
 echo "Host GID (startup): $GROUP_ID"
 
+# Start the cron service in the background. Unfortunately upstart doesnt work yet.
+echo "Run cron..."
+cron
 
 LASTLINE=""
 
@@ -20,10 +23,6 @@ usermod -u $USER_ID debian
 groupmod -g $GROUP_ID debian
 chown -R $USER_ID:$GROUP_ID /home/debian
 chown -R $USER_ID:$GROUP_ID /var/spool/cron/crontabs/debian
-
-# Start the cron service in the background. Unfortunately upstart doesnt work yet.
-echo "Run cron..."
-cron
 
 #Start PHP-FPM
 echo "Start PHP-FPM..."
