@@ -78,7 +78,7 @@ chmod -R 775 /var/log/laravel
 
 crontab -u debian -l > /tmp/mycron
 echo "0 0 * * * sudo /usr/sbin/logrotate -f /etc/logrotate.conf" >> /tmp/mycron
-echo "* * * * * /usr/local/bin/php /var/www/html/artisan schedule:run >> /var/log/cron.log 2>&1" >> /tmp/mycron
+echo "* * * * * /usr/bin/php /var/www/html/artisan schedule:run >> /var/log/cron.log 2>&1" >> /tmp/mycron
 crontab -u debian /tmp/mycron
 rm /tmp/mycron
 chown debian:crontab /var/spool/cron/crontabs/debian
