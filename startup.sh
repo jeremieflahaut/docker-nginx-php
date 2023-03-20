@@ -7,7 +7,7 @@ echo "Host GID (startup): $GROUP_ID"
 
 # Start the cron service in the background. Unfortunately upstart doesnt work yet.
 echo "Run cron..."
-sudo cron
+cron
 
 LASTLINE=""
 
