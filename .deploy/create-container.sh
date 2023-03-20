@@ -82,6 +82,6 @@ echo "0 0 * * * sudo /usr/sbin/logrotate -f /etc/logrotate.conf" >> /tmp/mycron
 echo "* * * * * /usr/bin/php /var/www/html/artisan schedule:run >> /var/log/cron.log 2>&1" >> /tmp/mycron
 crontab -u debian /tmp/mycron
 rm /tmp/mycron
-chmod u+s /usr/sbin/cron
+usermod -a -G crontab debian
 echo "Cron install done."
 
