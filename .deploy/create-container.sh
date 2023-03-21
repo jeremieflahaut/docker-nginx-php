@@ -76,12 +76,10 @@ mkdir -p /var/log/laravel
 chown -R root:debian /var/log/laravel
 chmod -R 775 /var/log/laravel
 
-usermod -a -G crontab debian
-crontab -u debian -l > /tmp/mycron
-echo "0 0 * * * sudo /usr/sbin/logrotate -f /etc/logrotate.conf" >> /tmp/mycron
+crontab -u root -l > /tmp/mycron
+echo "0 0 * * * /usr/sbin/logrotate -f /etc/logrotate.conf" >> /tmp/mycron
 echo "* * * * * /usr/bin/php /var/www/html/artisan schedule:run >> /var/log/cron.log 2>&1" >> /tmp/mycron
-crontab -u debian /tmp/mycron
+crontab -u root /tmp/mycron
 rm /tmp/mycron
-usermod -a -G crontab debian
 echo "Cron install done."
 
