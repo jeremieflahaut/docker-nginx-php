@@ -9,7 +9,7 @@ apt-get update && apt-get install -y apt-utils && apt-get upgrade -y
 
 # install git et autres logiciels
 echo "install packages..."
-apt-get install -y wget git ntp ntpdate sudo nano curl cron rsyslog logrotate
+apt-get install -y wget git ntp ntpdate sudo nano curl cron rsyslog logrotate unzip
 
 # Synchro horloge
 echo "synchro horloge..."
