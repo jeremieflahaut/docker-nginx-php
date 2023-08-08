@@ -18,6 +18,7 @@ do
 usermod -u $USER_ID debian
 groupmod -g $GROUP_ID debian
 chown -R $USER_ID:$GROUP_ID /home/debian
+chown -R $USER_ID:$GROUP_ID /var/www/html
 
 # Start the cron service in the background. Unfortunately upstart doesnt work yet.
 echo "Run cron..."
