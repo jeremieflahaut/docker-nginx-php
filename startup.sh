@@ -5,7 +5,6 @@ echo "Run startup.sh ..."
 echo "Host UID (startup): $USER_ID"
 echo "Host GID (startup): $GROUP_ID"
 
-
 LASTLINE=""
 
 RUNAS="sudo -u root bash"
@@ -19,7 +18,7 @@ do
 usermod -u $USER_ID debian
 groupmod -g $GROUP_ID debian
 chown -R $USER_ID:$GROUP_ID /home/debian
-chown -R $USER_ID:$GROUP_ID /var/spool/cron/crontabs/debian
+chown -R $USER_ID:$GROUP_ID /var/www/html
 
 # Start the cron service in the background. Unfortunately upstart doesnt work yet.
 echo "Run cron..."
